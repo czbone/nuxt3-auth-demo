@@ -1,0 +1,18 @@
+{
+  "[typescript]": {
+    "editor.formatOnSave": true,
+    "editor.codeActionsOnSave": {
+      "source.addMissingImports": true,
+      "source.fixAll.eslint": true,
+      "source.organizeImports": true
+    },
+  },
+  "[vue]": {
+    "editor.formatOnSave": true,
+    "editor.codeActionsOnSave": {
+      "source.addMissingImports": true,
+      "source.fixAll.eslint": true,
+      "source.organizeImports": true
+    },
+  },
+}

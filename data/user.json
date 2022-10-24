@@ -1,0 +1,2 @@
+{"_id":{"$oid":"6310554c3190a8d31048c6f9"},"id":1,"email":"admin@example.com","name":"管理者","password":"$2a$10$XLEGbbEKPN6WUHyV6Iv9zeT90nZTJl3uz4HPelKblOaQQgEicWijW","role":"admin"}
+{"_id":{"$oid":"6310554d3190a8d31048c6fa"},"id":2,"email":"user@example.com","name":"一般ユーザ","password":"$2a$10$XLEGbbEKPN6WUHyV6Iv9zeT90nZTJl3uz4HPelKblOaQQgEicWijW","role":"user"}
