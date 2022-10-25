@@ -1,28 +1,20 @@
-# 現在の状況
+# Nuxt 3 Authentication Demo
 
-ユーザ認証機能はうまく動作している。
+Authentication demo web application with session based on Nuxt 3
+　
+## Environment
 
-## 主な仕様
+- Node v16 above
+- Redis
+- MongoDB
 
-- Nuxt3(Expressなし)
-- CSSフレームワーク「tailwind」
-- 認証部分は「nuxt3-auth-example-main」を参考にしている
-- Redisでの独自セッション管理(WSL2でRedisを起動する必要あり)
-- MongoDBでユーザ情報管理(WSL2でMongoDBを起動する必要あり)
+## Setup
 
-# 準備
-
-MongoDBにデータベース(sampleDB)を作成し、ユーザデータ(data/user.json)を以下のコマンドでインポートします。
+Install data:
 
 ```
 $ mongoimport --drop --db sampleDB --collection user --file user.json
 ```
-
-# Nuxt 3 Minimal Starter
-
-Look at the [nuxt 3 documentation](https://v3.nuxtjs.org) to learn more.
-
-## Setup
 
 Make sure to install the dependencies:
 
@@ -32,9 +24,6 @@ yarn install
 
 # npm
 npm install
-
-# pnpm
-pnpm install --shamefully-hoist
 ```
 
 ## Development Server
@@ -42,6 +31,10 @@ pnpm install --shamefully-hoist
 Start the development server on http://localhost:3000
 
 ```bash
+# yarn
+yarn dev
+
+# npm
 npm run dev
 ```
 
@@ -50,13 +43,23 @@ npm run dev
 Build the application for production:
 
 ```bash
+# yarn
+yarn build
+
+# npm
 npm run build
 ```
 
 Locally preview production build:
 
 ```bash
+# yarn
+yarn preview
+
+# npm
 npm run preview
 ```
 
-Checkout the [deployment documentation](https://v3.nuxtjs.org/docs/deployment) for more information.
+## License
+
+[MIT](./LICENSE)
