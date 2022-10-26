@@ -11,12 +11,12 @@ export default async (_nitroApp: Nitro) => {
 		console.log('=> Debug mode starting')
 	}
 
-	// セッション管理用Redisクライアント作成
+	// セッション管理用のRedisクライアント作成
 	const redis = new Redis(config.sessionRedisUrl)
 	const redisSession = new RedisSession({ client: redis, ttl: config.sessionExpires })
 	_nitroApp.session = redisSession
 
-	// MongoDB作成
+	// MongoDB初期接続
 	try {
 		await mongoose.connect(config.mongoUrl)
 		console.log('MongoDB connection established.')
