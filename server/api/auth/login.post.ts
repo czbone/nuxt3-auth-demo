@@ -33,6 +33,7 @@ export default defineEventHandler(async (event) => {
 		})
 	}
 
+	// セッションID作成
 	const config = useRuntimeConfig()
 	const sessionId = uuidv4()
 	const signedSessionId = sign(sessionId, config.sessionCookieSecret)

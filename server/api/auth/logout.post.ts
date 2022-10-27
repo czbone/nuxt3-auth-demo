@@ -4,15 +4,17 @@ export default defineEventHandler(async (event) => {
 	const app = useNitroApp()
 	const config = useRuntimeConfig()
 
-	// delete session
+	// セッションID取得
 	const cookie = useCookies(event)[config.sessionCookieName]
 	if (cookie) {
 		const unsignedSession = unsign(cookie, config.sessionCookieSecret)
 		if (unsignedSession) {
+			// セッション破棄
 			await app.session.destroy(config.sessionIdPrefix + unsignedSession)
 		}
 	}
 
+	// クッキー破棄
 	deleteCookie(event, config.sessionCookieName, {
 		httpOnly: true,
 		path: '/',
