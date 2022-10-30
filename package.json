@@ -11,11 +11,11 @@
   },
   "devDependencies": {
     "@nuxtjs/color-mode": "^3.1.8",
-    "@nuxtjs/tailwindcss": "^6.1.1",
+    "@nuxtjs/tailwindcss": "^6.1.2",
     "@types/cookie-signature": "^1.0.4",
     "@typescript-eslint/eslint-plugin": "^5.41.0",
     "@typescript-eslint/parser": "^5.41.0",
-    "daisyui": "^2.33.0",
+    "daisyui": "^2.36.1",
     "eslint": "^8.26.0",
     "eslint-config-prettier": "^8.5.0",
     "eslint-plugin-import": "^2.26.0",
