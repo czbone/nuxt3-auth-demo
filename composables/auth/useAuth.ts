@@ -20,9 +20,7 @@ export const useAuth = () => {
 				rememberMe
 			}
 		})
-
 		setUser(data.user)
-
 		return authUser
 	}
 
@@ -30,7 +28,6 @@ export const useAuth = () => {
 		const data = await $fetch('/api/auth/logout', {
 			method: 'POST'
 		})
-
 		setUser(data.user)
 	}
 
@@ -40,13 +37,11 @@ export const useAuth = () => {
 				const data = await $fetch('/api/auth/me', {
 					headers: useRequestHeaders(['cookie']) as HeadersInit
 				})
-
 				setUser(data.user)
 			} catch (error) {
 				setCookie(null)
 			}
 		}
-
 		return authUser
 	}
 
