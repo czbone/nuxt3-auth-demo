@@ -14,7 +14,7 @@ export async function getSession(event: CompatibilityEvent) {
 	const config = useRuntimeConfig()
 
 	// クッキー取得
-	const cookie = useCookies(event)[config.sessionCookieName]
+	const cookie = getCookie(event, config.sessionCookieName)
 	if (!cookie) return null
 
 	// セッションID取得

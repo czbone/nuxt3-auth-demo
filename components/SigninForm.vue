@@ -52,34 +52,50 @@
   </div>
 </template>
 <script setup lang="ts">
+import { configure, Field, Form } from 'vee-validate';
+import * as Yup from 'yup';
+
 const emit = defineEmits(['success'])
 const { login } = useAuth()
 const { isOpen, close } = useSigninDialog()
+let loading = false
+let errorMessage = ''
+let showPassword = false  // パスワード表示切り替え用
+let form = {
+              email: '',
+              password: '',
+            }
 
-async function onSignin() {
+const onSignin = async () => {
   try {
-    this.errorMessage = ''
-    this.loading = true
+    errorMessage = ''
+    loading = true
 
     // ログイン処理
     // 認証失敗(レスポンスコード200以外)の場合は例外を発生し、catch側へ遷移
-    await login(this.form.email, this.form.password, false)
+    await login(form.email, form.password, false)
 
     // ダイアログ閉じる
-    this.close()
+    close()
 
     // ログイン後の画面へ遷移
     emit('success')
   } catch (error: any) {
-    //if (error.data.message) this.errorMessage = error.data.message
-    this.errorMessage = '認証に失敗しました'
+    errorMessage = '認証に失敗しました'
   } finally {
-    this.loading = false
+    loading = false
   }
 }
 
-import { Form, Field, configure } from 'vee-validate'
-import * as Yup from 'yup'
+const validate = async () => {
+  loading = true
+  await onSignin()
+  loading = false
+}
+
+const closeDialog = () => {
+  close()
+}
 
 // バリデーション実行のトリガーを設定
 configure({
@@ -90,44 +106,22 @@ configure({
 })
 
 const schema = Yup.object().shape({
-    email: Yup.string()
-        .required('Email is required')
-        .email('Email is invalid'),
-    password: Yup.string()
-        .min(6, 'Password must be at least 6 characters')
-        .required('Password is required'),
+  email: Yup.string()
+          .required('Email is required')
+          .email('Email is invalid'),
+  password: Yup.string()
+              .min(6, 'Password must be at least 6 characters')
+              .required('Password is required'),
 })
-</script>
-<script lang="ts">
-export default {
-  data() {
-    return {
-      form: {
-        email: '',
-        password: '',
-      },
-      errorMessage: '',
-      showPassword: false,  // パスワード表示切り替え用
-      loading: false, // 処理中表示用
+
+// Eventリスナーの登録
+onMounted(() => {
+  // ESCキーでダイアログを閉じる
+  document.addEventListener("keydown", (e) => {
+    if (e.keyCode == 27) {
+      close()
     }
-  },
-  mounted() {
-    // ESCキーでダイアログを閉じる
-    document.addEventListener("keydown", (e) => {
-      if (e.keyCode == 27) {
-        this.close()
-      }
-    })
-  },
-  methods: {
-    async validate() {
-      this.loading = true
-      await this.onSignin()
-      this.loading = false
-    },
-    closeDialog () {
-      this.close()
-    },
-  },
-}
+  })
+})
+
 </script>

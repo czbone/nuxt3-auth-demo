@@ -5,7 +5,7 @@ export default defineEventHandler(async (event) => {
 	const config = useRuntimeConfig()
 
 	// セッションID取得
-	const cookie = useCookies(event)[config.sessionCookieName]
+	const cookie = getCookie(event, config.sessionCookieName)
 	if (cookie) {
 		const unsignedSession = unsign(cookie, config.sessionCookieSecret)
 		if (unsignedSession) {

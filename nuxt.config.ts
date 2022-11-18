@@ -1,6 +1,4 @@
-import { defineNuxtConfig } from 'nuxt'
-
-export default defineNuxtConfig({
+export default {
   vite: {
     define: {
       'process.env.DEBUG': false,
@@ -40,4 +38,4 @@ export default defineNuxtConfig({
     dataValue: 'theme', // activate data-theme in <html> tag
     classSuffix: '',
   },
-})
+}
