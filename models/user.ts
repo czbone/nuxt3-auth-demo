@@ -14,7 +14,7 @@ const schema = new mongoose.Schema(
 			default: 'user'
 		}
 	},
-	{ timestamps: true, strict: true, strictQuery: true }
+	{ timestamps: true, strict: true }
 )
 
 schema.statics.getUserByEmail = async (email: string) => {

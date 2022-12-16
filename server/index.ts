@@ -18,7 +18,9 @@ export default async (_nitroApp: Nitro) => {
 
 	// MongoDB初期接続
 	try {
+		mongoose.set('strictQuery', false)
 		await mongoose.connect(config.mongoUrl)
+
 		console.log('MongoDB connection established.')
 	} catch (err) {
 		console.error('MongoDB connection failed.', err)
