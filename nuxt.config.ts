@@ -4,9 +4,6 @@ export default {
       'process.env.DEBUG': false,
     },
   },
-  serverMiddleware: [
-    { path: '/api', handler: '~/server-middleware/ac.ts' }  // APIにアクセス制限を掛ける
-  ],
   meta: {
     title: 'Nuxt3 Auth Demo',
     link: [

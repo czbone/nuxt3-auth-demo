@@ -16,7 +16,7 @@
     "@typescript-eslint/eslint-plugin": "^5.46.1",
     "@typescript-eslint/parser": "^5.46.1",
     "daisyui": "^2.45.0",
-    "eslint": "^8.29.0",
+    "eslint": "^8.30.0",
     "eslint-config-prettier": "^8.5.0",
     "eslint-plugin-import": "^2.26.0",
     "eslint-plugin-unused-imports": "^2.0.0",
@@ -31,7 +31,7 @@
     "ioredis": "^5.2.4",
     "mongoose": "^6.8.0",
     "mongoose-bcrypt": "^1.10.0",
-    "sass": "^1.56.2",
+    "sass": "^1.57.0",
     "uuid": "^9.0.0",
     "vee-validate": "^4.7.3",
     "yup": "^0.32.11"
