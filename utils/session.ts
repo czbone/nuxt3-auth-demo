@@ -1,5 +1,5 @@
 import cookieSignature from 'cookie-signature'
-import type { CompatibilityEvent } from 'h3'
+import type { H3Event } from 'h3'
 
 export function sign(value: string, secret: string) {
 	return cookieSignature.sign(value, secret)
@@ -9,7 +9,7 @@ export function unsign(value: string, secret: string) {
 	return cookieSignature.unsign(value, secret)
 }
 
-export async function getSession(event: CompatibilityEvent) {
+export async function getSession(event: H3Event) {
 	const app = useNitroApp()
 	const config = useRuntimeConfig()
 
