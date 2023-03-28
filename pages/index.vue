@@ -30,7 +30,6 @@ const isAdmin = useAdmin()
 
 async function onSigninSuccess() {
   const redirect = isAdmin.value ? '/admin' : '/'
-
-  await navigateTo(redirect)
+  location.href = redirect
 }
 </script>
