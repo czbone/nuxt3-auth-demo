@@ -57,14 +57,14 @@ yarn build
 npm run build
 ```
 
-Locally preview production build:
+Launch the application for production:
 
 ```bash
 # yarn
-yarn preview
+yarn start
 
 # npm
-npm run preview
+npm start
 ```
 
 ## License

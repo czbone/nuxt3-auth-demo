@@ -5,35 +5,36 @@
     "dev": "nuxt dev",
     "generate": "nuxt generate",
     "preview": "nuxt preview",
+    "start": "node .output/server/index.mjs",
     "format": "prettier --cache --write \"**/*.{cjs,js,jsx,ts,tsx,vue}\"",
     "lint": "eslint . --fix --ext .cjs,.js,.jsx,.ts,.tsx,.vue",
     "check:all": "yarn lint && yarn format && yarn coverage"
   },
   "devDependencies": {
     "@nuxtjs/color-mode": "^3.2.0",
-    "@nuxtjs/tailwindcss": "^6.3.1",
+    "@nuxtjs/tailwindcss": "^6.6.4",
     "@types/cookie-signature": "^1.1.0",
-    "@typescript-eslint/eslint-plugin": "^5.51.0",
-    "@typescript-eslint/parser": "^5.51.0",
-    "daisyui": "^2.50.0",
-    "eslint": "^8.34.0",
-    "eslint-config-prettier": "^8.6.0",
+    "@typescript-eslint/eslint-plugin": "^5.57.0",
+    "@typescript-eslint/parser": "^5.57.0",
+    "daisyui": "^2.51.5",
+    "eslint": "^8.36.0",
+    "eslint-config-prettier": "^8.8.0",
     "eslint-plugin-import": "^2.27.5",
     "eslint-plugin-unused-imports": "^2.0.0",
-    "eslint-plugin-vue": "^9.9.0",
-    "nuxt": "^3.2.0",
-    "prettier": "^2.8.4",
-    "typescript": "^4.9.5"
+    "eslint-plugin-vue": "^9.10.0",
+    "nuxt": "^3.3.2",
+    "prettier": "^2.8.7",
+    "typescript": "^5.0.2"
   },
   "dependencies": {
     "bcryptjs": "^2.4.3",
-    "cookie-signature": "^1.2.0",
-    "ioredis": "^5.3.0",
-    "mongoose": "^6.9.1",
+    "cookie-signature": "^1.2.1",
+    "ioredis": "^5.3.1",
+    "mongoose": "^7.0.3",
     "mongoose-bcrypt": "^1.10.1",
-    "sass": "^1.58.0",
+    "sass": "^1.60.0",
     "uuid": "^9.0.0",
-    "vee-validate": "^4.7.4",
-    "yup": "^1.0.0"
+    "vee-validate": "^4.8.4",
+    "yup": "^1.0.2"
   }
 }
