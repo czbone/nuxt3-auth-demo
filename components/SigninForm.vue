@@ -8,7 +8,7 @@
           class="modal-header flex flex-shrink-0 items-center justify-between p-4 border-b border-gray-200 rounded-t-md">
           <h5 id="signinDialogLabel" class="text-xl font-medium leading-normal text-gray-800">サインイン</h5>
         </div>
-        <Form v-slot="{ errors }" :validation-schema="schema" @submit="validate">
+        <Form v-slot="{ meta, errors }" :validation-schema="schema" @submit="validate">
           <div class="modal-body relative p-4">
             <div v-if="errorMessage" class="alert alert-error shadow-lg mb-4 rounded-lg">
               <svg xmlns="http://www.w3.org/2000/svg" class="stroke-current shrink-0 h-6 w-6" fill="none" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 14l2-2m0 0l2-2m-2 2l-2-2m2 2l2 2m7-2a9 9 0 11-18 0 9 9 0 0118 0z" /></svg>
@@ -32,13 +32,13 @@
             <button
               type="submit"
               class="btn px-7 py-3 ml-3 rounded-lg"
-              :disabled="loading">
+              :disabled="!meta.valid || loading">
               サインイン
             </button>
             <button
               type="button"
               class="btn btn-ghost px-7 py-3 ml-3 rounded-lg"
-              :disabled="loading"
+              :disabled="!meta.valid || loading"
               data-bs-dismiss="modal"
               @click="closeDialog">
               キャンセル
