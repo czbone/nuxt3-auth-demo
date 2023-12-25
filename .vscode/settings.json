@@ -15,4 +15,11 @@
       "source.organizeImports": true
     },
   },
+  "[typescript][vue]": {
+    "editor.codeActionsOnSave": {
+      "source.addMissingImports": "explicit",
+      "source.fixAll.eslint": "explicit",
+      "source.organizeImports": "explicit"
+    }
+  },
 }
