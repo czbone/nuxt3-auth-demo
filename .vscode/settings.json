@@ -2,17 +2,17 @@
   "[typescript]": {
     "editor.formatOnSave": true,
     "editor.codeActionsOnSave": {
-      "source.addMissingImports": true,
-      "source.fixAll.eslint": true,
-      "source.organizeImports": true
+      "source.addMissingImports": "explicit",
+      "source.fixAll.eslint": "explicit",
+      "source.organizeImports": "explicit"
     },
   },
   "[vue]": {
     "editor.formatOnSave": true,
     "editor.codeActionsOnSave": {
-      "source.addMissingImports": true,
-      "source.fixAll.eslint": true,
-      "source.organizeImports": true
+      "source.addMissingImports": "explicit",
+      "source.fixAll.eslint": "explicit",
+      "source.organizeImports": "explicit"
     },
   },
   "[typescript][vue]": {
