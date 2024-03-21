@@ -13,7 +13,7 @@ Authentication demo web application with session based on Nuxt 3
 Install data:
 
 ```
-$ mongoimport --drop --db sampleDB --collection user --file user.json
+$ mongoimport --drop --db sampleDB --collection user --file data/user.json
 ```
 
 Edit `.env` file:
